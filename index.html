@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Engineer GIF</title>
+    <style>
+        /* CSS Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 80vh;
+        }
+
+        .gif-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .animated-gif {
+            max-width: 100%;
+            height: 40%;
+            border: 2px solid #333;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .animated-gif:hover {
+            transform: scale(1.1);
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="gif-container">
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMjc2anB1dTNkNTgwajdscmt0dGl4ZHZjaDlqanpscndncHJ1ejY4dCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/bGgsc5mWoryfgKBx1u/giphy.gif" 
+             alt="Software Engineer Animation" class="animated-gif">
+    </div>
+
+    <!--<button id="change-gif"></button>-->
+
+    <script>
+        // JavaScript for interactivity
+        const gif = document.querySelector('.animated-gif');
+        const changeGifButton = document.getElementById('change-gif');
+
+        // Array of GIF URLs
+        const gifLinks = [
+            "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMjc2anB1dTNkNTgwajdscmt0dGl4ZHZjaDlqanpscndncHJ1ejY4dCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/bGgsc5mWoryfgKBx1u/giphy.gif",
+            "https://media.giphy.com/media/3o7aCUuVCRywX78OHS/giphy.gif",
+            "https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif"
+        ];
+
+        // Change the GIF when the button is clicked
+        changeGifButton.addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * gifLinks.length);
+            gif.src = gifLinks[randomIndex];
+        });
+    </script>
+</body>
+</html>
